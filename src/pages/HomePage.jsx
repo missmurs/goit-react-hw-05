@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getMovies } from "../api.js";
 
 import MovieList from "../components/MovieList/MovieList.jsx";
+import Filter from "../components/Filter.jsx";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
@@ -35,6 +36,7 @@ export default function HomePage() {
     <div>
       <h1>Trending today</h1>
       {error && <p>OOOPS, error!</p>}
+
       {movies.length > 0 && <MovieList movies={movies} />}
     </div>
   );
