@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
-import css from "./Navbar.module.css";
+import css from "./Navigation.module.css";
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
 };
-export default function Navbar() {
+export default function Navigation() {
   return (
     <header className={css.header}>
       <nav className={css.nav}>

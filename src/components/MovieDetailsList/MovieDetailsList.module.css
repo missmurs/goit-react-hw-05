@@ -1,0 +1,8 @@
+.movieDetailsBox {
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь під заголовком */
+  padding: 5px;
+}
+.movieDetailsText {
+  padding-left: 20px;
+}
