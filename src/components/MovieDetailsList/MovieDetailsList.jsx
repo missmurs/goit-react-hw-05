@@ -1,9 +1,15 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import css from "./MovieDetailsList.module.css";
+import { useRef } from "react";
 
 export default function MovieDetailsList({ movies }) {
+  const location = useLocation();
+  const backLinkRef = useRef(location.state);
+  console.log(backLinkRef);
+
   return (
     <>
+      <Link to={backLinkRef.current ?? "/"}>Go back</Link>
       <div className={css.movieDetailsBox}>
         <img
           src={`https://image.tmdb.org/t/p/w500${movies.backdrop_path}`}

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { getMovies } from "../api.js";
 
 import MovieList from "../components/MovieList/MovieList.jsx";
-import Filter from "../components/Filter.jsx";
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
