@@ -19,3 +19,10 @@ export const getMoviesSearch = async ({ query }) => {
   );
   return response.data.results;
 };
+
+export const getMoviesCredits = async (moviesId) => {
+  const response = await axios.get(
+    `/movie/${moviesId}/credits?api_key=${API_Key}`
+  );
+  return response.data.cast;
+};

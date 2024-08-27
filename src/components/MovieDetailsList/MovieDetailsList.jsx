@@ -22,6 +22,7 @@ export default function MovieDetailsList({ movies }) {
           <p>{movies.overview}</p>
           <h3>Genres</h3>
           <p>{movies.genres.map((genre) => genre.name).join(", ")}</p>{" "}
+          {console.log("genres", movies.genres)}
         </div>
       </div>
       <div>
