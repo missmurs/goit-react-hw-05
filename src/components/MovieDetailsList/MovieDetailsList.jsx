@@ -1,15 +1,15 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import css from "./MovieDetailsList.module.css";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
+import GoBack from "../GoBack/GoBack";
 
 export default function MovieDetailsList({ movies }) {
   const location = useLocation();
   const backLinkRef = useRef(location.state);
-  console.log(backLinkRef);
 
   return (
     <>
-      <Link to={backLinkRef.current ?? "/"}>Go back</Link>
+      <GoBack href={backLinkRef.current ?? "/"}>Go back</GoBack>
       <div className={css.movieDetailsBox}>
         <img
           src={`https://image.tmdb.org/t/p/w500${movies.backdrop_path}`}
@@ -29,7 +29,9 @@ export default function MovieDetailsList({ movies }) {
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>
       </div>
-      <Outlet />
+      <Suspense fallback={<b>Loading...</b>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 }
