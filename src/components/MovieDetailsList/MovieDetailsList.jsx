@@ -27,8 +27,14 @@ export default function MovieDetailsList({ movies }) {
       </div>
       <div>
         <p>Additional information</p>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+        <ul>
+          <li>
+            <Link to="cast">Cast</Link>
+          </li>
+          <li>
+            <Link to="reviews">Reviews</Link>
+          </li>
+        </ul>
       </div>
       <Suspense fallback={<b>Loading...</b>}>
         <Outlet />
